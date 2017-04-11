@@ -1,3 +1,3 @@
 # vue-touch-events
-vuejs touch events
-is comming
+vuejs touch events<br/>
+how to use is comming...
