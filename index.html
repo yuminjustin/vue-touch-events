@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>touch</title>
+    <style>
+        .block {
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            font-size: 24px;
+            margin: 45px;
+            background: #dedede;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="block" v-touch.preventDefault='true' @tap="tapCb" @longtap="longTapCb" @swipeup="swipeupCb" @swipedown="swipedownCb"
+            @swipeleft="swipeleftCb" @swiperight="swiperightCb" @swipe="swipeCb" @drag="dragCb">
+            {{msg}}
+        </div>
+    </div>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="./dev/bundle.js"></script>
+</body>
+
+</html>
