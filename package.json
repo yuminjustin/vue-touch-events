@@ -1,0 +1,24 @@
+{
+  "name": "vue-touch-events",
+  "version": "1.0.0",
+  "description": "extend touch event on vuejs",
+  "main": "vue-touch-events.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node pack/dev.js"
+  },
+  "keywords": [
+    "vue", "touch"
+  ],
+  "author": "yuminjustin@163.com",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.2.6"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^2.3.3"
+  }
+}
