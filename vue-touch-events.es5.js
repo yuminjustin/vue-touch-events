@@ -23,7 +23,9 @@
 			var startTime, touches = {},
 				ismoved = !1;
 			//触摸监听
-			var touchRegist = function (dom, pD) {
+			var touchRegist = function (dom, cfg) {
+				var pD = cfg.preventdefault || !1,
+					_dg = cfg.drag || !1;
 				dom.addEventListener('touchstart', function (e) {
 					e.stopPropagation()
 					pD && e.preventDefault();
@@ -34,14 +36,15 @@
 				dom.addEventListener('touchmove', function (e) {
 					e.stopPropagation()
 					touches.move = e.changedTouches[0]
-					moveCheck()
+					moveCheck(_dg, dom)
 				}, false);
 
 				dom.addEventListener('touchend', function (e) {
 					e.stopPropagation()
 					var endTime = (new Date()).getTime();
 					touches.end = e.changedTouches[0];
-					dom.dispatchEvent(TouchEvents[typeCheck(endTime - startTime)].evt);
+					var n = _dg ? 7 : typeCheck(endTime - startTime);
+					dom.dispatchEvent(TouchEvents[n].evt);
 					ismoved = !1;
 				}, false);
 
@@ -92,12 +95,19 @@
 				}
 			}
 
-			var moveCheck = function () {
+			var moveCheck = function (_dg, dom) {
 				var s = touches.start,
 					m = touches.move,
 					x = s.clientX - m.clientX,
 					y = s.clientY - m.clientY;
-				if (Math.abs(x) > 50 || Math.abs(y) > 50) ismoved = !0;
+				if (_dg) {
+					var h = m.clientY - dom.offsetHeight * 0.5,
+						w = m.clientX - dom.offsetWidth * 0.5;
+					dom.style.top = h + "px";
+					dom.style.left = w + "px";
+				} else {
+					if (Math.abs(x) > 50 || Math.abs(y) > 50) ismoved = !0;
+				}
 			}
 		}
 	}
