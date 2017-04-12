@@ -1,6 +1,6 @@
 {
   "name": "vue-touch-events",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "extend touch event on vuejs",
   "main": "vue-touch-events.js",
   "scripts": {
