@@ -6,23 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>touch</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
         .block {
             width: 200px;
             height: 200px;
             line-height: 200px;
             text-align: center;
             font-size: 24px;
-            margin: 45px;
             background: #dedede;
+            margin: 45px;
+        }
+
+        .block2 {
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            font-size: 16px;
+            top: 260px;
+            left: 45px;
+            background: #4f2de0;
+            position: absolute;
+            color: #fff;
+            z-index: 2
         }
     </style>
 </head>
 
 <body>
     <div id="app">
-        <div class="block" v-touch.preventDefault='true' @tap="tapCb" @longtap="longTapCb" @swipeup="swipeupCb" @swipedown="swipedownCb"
-            @swipeleft="swipeleftCb" @swiperight="swiperightCb" @swipe="swipeCb" @drag="dragCb">
+        <div class="block" v-touch.preventDefault @tap="tapCb" @longtap="longTapCb" @swipeup="swipeupCb" @swipedown="swipedownCb"
+            @swipeleft="swipeleftCb" @swiperight="swiperightCb" @swipe="swipeCb">
             {{msg}}
+        </div>
+        <div class="block2" v-touch.preventDefault.drag @drag="dragCb">
+            {{msg2}}
         </div>
     </div>
     <script src="node_modules/vue/dist/vue.js"></script>
