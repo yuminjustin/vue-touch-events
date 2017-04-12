@@ -5,32 +5,33 @@ Vue.use(Touch)
 new Vue({
 	el: "#app",
 	data: {
-		msg: ""
+		msg: "",
+		msg2: ""
 	},
 	methods: {
 		tapCb: function (e) {
-			this.msg = "轻触"
+			this.msg = "Tap"
 		},
 		longTapCb: function () {
-			this.msg = "长按"
+			this.msg = "Longtap"
 		},
 		swipeupCb: function () {
-			this.msg = "上滑"
+			this.msg = "Up"
 		},
 		swipedownCb: function () {
-			this.msg = "下滑"
+			this.msg = "Down"
 		},
 		swipeleftCb: function () {
-			this.msg = "左滑"
+			this.msg = "Left"
 		},
 		swiperightCb: function () {
-			this.msg = "右滑"
+			this.msg = "Right"
 		},
 		swipeCb: function () {
-			this.msg = "滑动"
+			this.msg = "Swipe"
 		},
 		dragCb: function () {
-			this.msg = "拖拽"
+			this.msg2 = "Moving"
 		}
 	}
-}) 
+})
