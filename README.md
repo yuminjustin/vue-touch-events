@@ -1,12 +1,23 @@
 # vue-touch-events
-这是一个Vue插件，提供了常用的几个事件: tap,longTap, swipeUp,swipeDown,swipeLeft,swipeRight,swipe,drag<br/>
-##Use
-       
-    import Touch from 'vue-touch-events'
-    Vue.use(Touch)
-	 
-	 /*script*/
-	 new Vue({
+This is a plugin for Vuejs, it offer these events<br/>
+**tap,longtap, swipeup,swipedown,swipeleft,swiperight,swipe,drag**
+
+## Use
+     import Touch from 'vue-touch-events'
+     Vue.use(Touch)
+	
+In Vue component you can bind these touch event just like a normally click event
+## template
+    <div>
+        <div class="block" v-touch.preventDefault @tap="tapCb" @longtap="longTapCb" @swipeup="swipeupCb" @swipedown="swipedownCb" @swipeleft="swipeleftCb" @swiperight="swiperightCb" @swipe="swipeCb">
+            {{msg}}
+        </div>
+        <div class="block2" v-touch.preventDefault.drag @drag="dragCb">
+            {{msg2}}
+        </div>
+    </div>
+## script 
+    new Vue({
 	   el: "#app",
 	   methods: {
 		tapCb: ...,
@@ -18,13 +29,28 @@
 		swipeCb: ...,
 		dragCb: ...
 	  }
-     }) 
-	/*template*/ 
-	<div id="app">
-        <div class="block" v-touch.preventDefault='true' @tap="tapCb" @longtap="longTapCb" @swipeup="swipeupCb" @swipedown="swipedownCb"
-            @swipeleft="swipeleftCb" @swiperight="swiperightCb" @swipe="swipeCb" @drag="dragCb">
-            {{msg}}
-        </div>
-    </div>
-	
-preventDefault 禁止浏览器事件 默认是不开启的
+    }) 
+## config 
+**preventDefault**<br/>
+Prohibit browser swipe events, just like UC or QQBrowser them has own swipe events, so sometimes we have to prohibit.
+Default is not prohibit<br/>
+**drag**<br/>
+This dom can be dragged ,default is can't. Drag event can't coexist with other touch events
+<br/><br/>
+## run this example
+    npm install		
+install webpack and Vue
+
+    npm run dev
+open index.html in your browser
+
+## install in you project
+    npm install vue-touch-events -S
+
+## SSR 
+   
+    if (process.BROWSER_BUILD) {
+      Vue.use(require('vue-touch-events'));
+    }
+   
+use it only in browser
