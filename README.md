@@ -6,8 +6,10 @@ This is a plugin for Vuejs, it offer these events<br/>
      import Touch from 'vue-touch-events'
      Vue.use(Touch)
 	
-In Vue component you can bind these touch event just like a normally click event
+In Vue component you can bind these touch events just like a normally click event
+
 ## template
+
     <div>
         <div class="block" v-touch.preventDefault @tap="tapCb" @longtap="longTapCb" @swipeup="swipeupCb" @swipedown="swipedownCb" @swipeleft="swipeleftCb" @swiperight="swiperightCb" @swipe="swipeCb">
             {{msg}}
@@ -16,7 +18,9 @@ In Vue component you can bind these touch event just like a normally click event
             {{msg2}}
         </div>
     </div>
+
 ## script 
+
     new Vue({
 	   el: "#app",
 	   methods: {
@@ -30,21 +34,30 @@ In Vue component you can bind these touch event just like a normally click event
 		dragCb: ...
 	  }
     }) 
+
 ## config 
+
 **preventDefault**<br/>
-Prohibit browser swipe events, just like UC or QQBrowser them has own swipe events, so sometimes we have to prohibit.
-Default is not prohibit<br/>
+
+Prohibit browser swipe events, just like UC or QQBrowser has  their own swipe events, so sometimes we have to close it.
+Default is not<br/>
+
 **drag**<br/>
-This dom can be dragged ,default is can't. Drag event can't coexist with other touch events
-<br/><br/>
+
+This dom could be dragged ,default it's can't. Drag event can't coexist with other touch events
+
+
 ## run this example
-    npm install		
+    npm install	
+
 install webpack and Vue
 
     npm run dev
+
 open index.html in your browser
 
 ## install in you project
+
     npm install vue-touch-events -S
 
 ## SSR 
