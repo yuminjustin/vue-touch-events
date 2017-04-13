@@ -39,7 +39,7 @@ In Vue component you can bind these touch events just like a normally click even
 
 **preventDefault**<br/>
 
-Prohibit browser swipe events, just like UC or QQBrowser has  their own swipe events, so sometimes we have to close it.
+Prohibit browser swipe events, just like UC or QQBrowser has  their own swipe events, so sometimes we have to close it.<br/>
 Default is not<br/>
 
 **drag**<br/>
@@ -56,7 +56,7 @@ install webpack and Vue
 
 open index.html in your browser
 
-## install in you project
+## install in your project
 
     npm install vue-touch-events -S
 
